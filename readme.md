@@ -4,7 +4,7 @@
 To use SamsonPHP framework in your project you must add its dependency in your ```composer.json```:
 ```json
     "require": {
-        "samsonos/php_htaccess": "1.*"
+        "samsonos/php_htaccess": "*"
     }, 
 ```
 

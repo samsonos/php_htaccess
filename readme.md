@@ -1,29 +1,33 @@
-#SamsonPHP
+#SamsonPHP module for automatic creating htaccess rules for [SamsonPHP](http://samsonphp.com) framework
 
-[SamsonPHP](http://samsonphp.com) - Modular Event-based PHP framework
-
-[![Latest Stable Version](https://poser.pugx.org/samsonos/php_core/v/stable.svg)](https://packagist.org/packages/samsonos/php_core) 
-[![Build Status](https://travis-ci.org/samsonos/php_core.png)](https://travis-ci.org/samsonos/php_core)
-[![Coverage Status](https://img.shields.io/coveralls/samsonos/php_core.svg)](https://coveralls.io/r/samsonos/php_core?branch=master)
-[![Code Climate](https://codeclimate.com/github/samsonos/php_core/badges/gpa.svg)](https://codeclimate.com/github/samsonos/php_core) 
-[![Total Downloads](https://poser.pugx.org/samsonos/php_core/downloads.svg)](https://packagist.org/packages/samsonos/php_core)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/samsonos/php_core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/samsonos/php_core/?branch=master)
-
-##Using SamsonPHP in your project
+##Using module in your project
 To use SamsonPHP framework in your project you must add its dependency in your ```composer.json```:
 ```json
     "require": {
-        "samsonos/php_core": "1.*"
+        "samsonos/php_htaccess": "1.*"
     }, 
 ```
-After doing ```composer install``` or ```composer update``` all SamsonPHP classes and functions would be available.
+
+For parsing e404 rules from your .txt file you must create configuration and call method error404()
 
 Example usage:
 ```php
-// Run framework
-s()->start('main');
-```
+// Create configuration class
+class HtaccessConfig extends \samson\core\Config
+{
+    public $__module = 'htaccesscreate';
 
-For further information read [Official SamsonPHP Wiki](https://github.com/samsonos/php_core/wiki)
+    public $domain 	= 'example.com';
+}
+
+/**
+*
+*
+*
+*/
+
+// Call parsing method
+m('htaccesscreate')->error404('myfile.txt');
+```
 
 Developed by [SamsonOS](http://samsonos.com/)

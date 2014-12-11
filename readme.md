@@ -1,4 +1,4 @@
-#SamsonPHP module for automatic creating htaccess rules for [SamsonPHP](http://samsonphp.com) framework
+#SamsonPHP module for automatic creating htaccess rules
 
 ##Using module in your project
 To use SamsonPHP framework in your project you must add its dependency in your ```composer.json```:
@@ -20,7 +20,7 @@ class HtaccessConfig extends \samson\core\Config
     public $domain 	= 'example.com';
 }
 
-/**
+/*
 *
 *
 *
